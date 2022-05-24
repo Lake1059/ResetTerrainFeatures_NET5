@@ -1,0 +1,10 @@
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\bin\Debug\net5.0\ResetTerrainFeatures_NET5.deps.json
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\bin\Debug\net5.0\ResetTerrainFeatures_NET5.dll
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\bin\Debug\net5.0\ResetTerrainFeatures_NET5.pdb
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\obj\Debug\net5.0\ResetTerrainFeatures_NET5.GeneratedMSBuildEditorConfig.editorconfig
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\obj\Debug\net5.0\ResetTerrainFeatures_NET5.AssemblyInfoInputs.cache
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\obj\Debug\net5.0\ResetTerrainFeatures_NET5.AssemblyInfo.cs
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\obj\Debug\net5.0\ResetTerrainFeatures_NET5.csproj.CoreCompileInputs.cache
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\obj\Debug\net5.0\ResetTerrainFeatures_NET5.dll
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\obj\Debug\net5.0\ResetTerrainFeatures_NET5.pdb
+C:\CSharp\ResetTerrainFeatures_NET5\ResetTerrainFeatures_NET5\obj\Debug\net5.0\ResetTerrainFeatures_NET5.csproj.AssemblyReference.cache
