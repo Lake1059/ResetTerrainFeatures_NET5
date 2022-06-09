@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ResetTerrainFeatures_NET5;
 using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Menus;
 
 namespace ResetTerrainFeatures.Menu
 {
-	// Token: 0x02000008 RID: 8
-	public class ResetMenu : IClickableMenu
+    // Token: 0x02000008 RID: 8
+    public class ResetMenu : IClickableMenu
 	{
 		// Token: 0x0600001E RID: 30 RVA: 0x00003B9C File Offset: 0x00001D9C
 		public ResetMenu(int x, int y, int width, int height) : base(Game1.viewport.Width / 2 - (600 + IClickableMenu.borderWidth * 2) / 2, Game1.viewport.Height / 2 - (660 + IClickableMenu.borderWidth * 2) / 2, 600 + IClickableMenu.borderWidth * 2, 870 + IClickableMenu.borderWidth * 2, true)
 		{
 			List<ClickableComponent> list = this.optionSlots;
-			ClickableComponent clickableComponent = new ClickableComponent(new Rectangle(this.xPositionOnScreen + 16, this.yPositionOnScreen + 40, width - 32, 40), "0")
+			ClickableComponent clickableComponent = new(new Rectangle(this.xPositionOnScreen + 16, this.yPositionOnScreen + 40, width - 32, 40), "0")
 			{
 				myID = 0,
 				downNeighborID = 1,
@@ -30,8 +31,8 @@ namespace ResetTerrainFeatures.Menu
 			clickableComponent.fullyImmutable = true;
 			list.Add(item);
 
-			this.options.Add(new CheckBox(OBJ_i18n.RESETALLLOCATIONS, "RESETALLLOCATIONS", -1, -1, null));
-			this.options.Add(new ResetMenuComponent(OBJ_i18n.SelectObjectChanged, true));
+			this.options.Add(new CheckBox(OBJI18n.RESETALLLOCATIONS, "RESETALLLOCATIONS", -1, -1, null));
+			this.options.Add(new ResetMenuComponent(OBJI18n.SelectObjectChanged, true));
 			for (int i = 0; i < 10; i++)
 			{
 				list.Add(new ClickableComponent(new Rectangle(this.xPositionOnScreen + 16, this.yPositionOnScreen + 160 + i * 40, 118, 40), string.Concat(i))
@@ -42,16 +43,16 @@ namespace ResetTerrainFeatures.Menu
 					fullyImmutable = true
 				});
 			}
-			this.options.Add(new CheckBox(OBJ_i18n.Bush, "Bush", -1, -1, null)); //灌木丛
-			this.options.Add(new CheckBox(OBJ_i18n.Tree, "Tree", -1, -1, null)); //树木
-			this.options.Add(new CheckBox(OBJ_i18n.Weed, "Weeds", -1, -1, null)); //杂草
-			this.options.Add(new CheckBox(OBJ_i18n.Grass, "Grass", -1, -1, null)); //草地
-			this.options.Add(new CheckBox(OBJ_i18n.Twig, "Twig", -1, -1, null)); //树枝
-			this.options.Add(new CheckBox(OBJ_i18n.Rock, "Rock", -1, -1, null)); //石块
-			this.options.Add(new CheckBox(OBJ_i18n.Forage, "Forage", -1, -1, null)); //草料
-			this.options.Add(new CheckBox(OBJ_i18n.Stump, "Stump", -1, -1, null)); //树桩
-			this.options.Add(new CheckBox(OBJ_i18n.Log, "Log", -1, -1, null)); //原木
-			this.options.Add(new CheckBox(OBJ_i18n.Boulder, "Boulder", -1, -1, null)); //巨石
+			this.options.Add(new CheckBox(OBJI18n.Bush, "Bush", -1, -1, null)); //灌木丛
+			this.options.Add(new CheckBox(OBJI18n.Tree, "Tree", -1, -1, null)); //树木
+			this.options.Add(new CheckBox(OBJI18n.Weed, "Weeds", -1, -1, null)); //杂草
+			this.options.Add(new CheckBox(OBJI18n.Grass, "Grass", -1, -1, null)); //草地
+			this.options.Add(new CheckBox(OBJI18n.Twig, "Twig", -1, -1, null)); //树枝
+			this.options.Add(new CheckBox(OBJI18n.Rock, "Rock", -1, -1, null)); //石块
+			this.options.Add(new CheckBox(OBJI18n.Forage, "Forage", -1, -1, null)); //草料
+			this.options.Add(new CheckBox(OBJI18n.Stump, "Stump", -1, -1, null)); //树桩
+			this.options.Add(new CheckBox(OBJI18n.Log, "Log", -1, -1, null)); //原木
+			this.options.Add(new CheckBox(OBJI18n.Boulder, "Boulder", -1, -1, null)); //巨石
 			for (int j = 0; j < 6; j++)
 			{
 				list.Add(new ClickableComponent(new Rectangle(this.xPositionOnScreen + 266, this.yPositionOnScreen + 160 + j * 40, 118, 40), string.Concat(j))
@@ -62,28 +63,28 @@ namespace ResetTerrainFeatures.Menu
 					fullyImmutable = true
 				});
 			}
-			this.options.Add(new CheckBox(OBJ_i18n.Path, "Path", -1, -1, null)); //道路
-			this.options.Add(new CheckBox(OBJ_i18n.Fence, "Fence", -1, -1, null)); //围栏
-			this.options.Add(new CheckBox(OBJ_i18n.Crop, "Crop", -1, -1, null)); //作物
-			this.options.Add(new CheckBox(OBJ_i18n.TilledSoil, "Soil", -1, -1, new List<CheckBox> //耕地
+			this.options.Add(new CheckBox(OBJI18n.Path, "Path", -1, -1, null)); //道路
+			this.options.Add(new CheckBox(OBJI18n.Fence, "Fence", -1, -1, null)); //围栏
+			this.options.Add(new CheckBox(OBJI18n.Crop, "Crop", -1, -1, null)); //作物
+			this.options.Add(new CheckBox(OBJI18n.TilledSoil, "Soil", -1, -1, new List<CheckBox> //耕地
 			{
-				this.options[this.getIndexByLabel(OBJ_i18n.Crop)] as CheckBox
+				this.options[this.getIndexByLabel(OBJI18n.Crop)] as CheckBox
 			}));
-			this.options.Add(new CheckBox(OBJ_i18n.Objects, "Object", -1, -1, new List<CheckBox> //对象
+			this.options.Add(new CheckBox(OBJI18n.Objects, "Object", -1, -1, new List<CheckBox> //对象
 			{
-				this.options[this.getIndexByLabel(OBJ_i18n.Weed)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.Fence)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.Twig)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.Rock)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.Forage)] as CheckBox
+				this.options[this.getIndexByLabel(OBJI18n.Weed)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.Fence)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.Twig)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.Rock)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.Forage)] as CheckBox
 			}));
-			this.options.Add(new CheckBox(OBJ_i18n.TFeature, "TFeature", -1, -1, new List<CheckBox> //地形特征
+			this.options.Add(new CheckBox(OBJI18n.TFeature, "TFeature", -1, -1, new List<CheckBox> //地形特征
 			{
-				this.options[this.getIndexByLabel(OBJ_i18n.Tree)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.Grass)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.Path)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.TilledSoil)] as CheckBox,
-				this.options[this.getIndexByLabel(OBJ_i18n.Crop)] as CheckBox
+				this.options[this.getIndexByLabel(OBJI18n.Tree)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.Grass)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.Path)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.TilledSoil)] as CheckBox,
+				this.options[this.getIndexByLabel(OBJI18n.Crop)] as CheckBox
 			}));
 			for (int k = 0; k < 3; k++)
 			{
@@ -95,17 +96,17 @@ namespace ResetTerrainFeatures.Menu
 					fullyImmutable = true
 				});
 			}
-			this.options.Add(new ResetButton(OBJ_i18n.Reset, delegate()
+			this.options.Add(new ResetButton(OBJI18n.Reset, delegate()
 			{
 				this.resetFeatures();
 			}));
 			this.adjustSlotBounds(this.options.Count - 1);
-			this.options.Add(new ResetButton(OBJ_i18n.Clear, delegate()
+			this.options.Add(new ResetButton(OBJI18n.Clear, delegate()
 			{
 				this.clearFeatures();
 			}));
 			this.adjustSlotBounds(this.options.Count - 1);
-			this.options.Add(new ResetButton(OBJ_i18n.Generate, delegate()
+			this.options.Add(new ResetButton(OBJI18n.Generate, delegate()
 			{
 				this.generateFeatures();
 			}));
@@ -157,11 +158,11 @@ namespace ResetTerrainFeatures.Menu
 					{
 						if (gameLocation.IsOutdoors)
 						{
-							Regenerator.reload(gameLocation, Regenerator.getTypesFromOptions(), Regenerator.getIndicesFromOptions());
+							Regenerator.Reload(gameLocation, Regenerator.GetTypesFromOptions(), Regenerator.GetIndicesFromOptions());
 						}
 					}
 				}
-				Regenerator.reload(Game1.currentLocation, Regenerator.getTypesFromOptions(), Regenerator.getIndicesFromOptions());
+				Regenerator.Reload(Game1.currentLocation, Regenerator.GetTypesFromOptions(), Regenerator.GetIndicesFromOptions());
 			}
 		}
 
@@ -176,11 +177,11 @@ namespace ResetTerrainFeatures.Menu
 					{
 						if (gameLocation.IsOutdoors)
 						{
-							Regenerator.clear(gameLocation, Regenerator.getTypesFromOptions(), Regenerator.getIndicesFromOptions());
+							Regenerator.Clear(gameLocation, Regenerator.GetTypesFromOptions(), Regenerator.GetIndicesFromOptions());
 						}
 					}
 				}
-				Regenerator.clear(Game1.currentLocation, Regenerator.getTypesFromOptions(), Regenerator.getIndicesFromOptions());
+				Regenerator.Clear(Game1.currentLocation, Regenerator.GetTypesFromOptions(), Regenerator.GetIndicesFromOptions());
 			}
 		}
 
@@ -195,11 +196,11 @@ namespace ResetTerrainFeatures.Menu
 					{
 						if (gameLocation.IsOutdoors)
 						{
-							Regenerator.loadMapFeatures(gameLocation, Regenerator.getTypesFromOptions(), Regenerator.getIndicesFromOptions());
+							Regenerator.LoadMapFeatures(gameLocation, Regenerator.GetTypesFromOptions(), Regenerator.GetIndicesFromOptions());
 						}
 					}
 				}
-				Regenerator.loadMapFeatures(Game1.currentLocation, Regenerator.getTypesFromOptions(), Regenerator.getIndicesFromOptions());
+				Regenerator.LoadMapFeatures(Game1.currentLocation, Regenerator.GetTypesFromOptions(), Regenerator.GetIndicesFromOptions());
 			}
 		}
 
@@ -258,20 +259,20 @@ namespace ResetTerrainFeatures.Menu
 			}
 			if (flag2)
 			{
-				this.options[this.getIndexByLabel(OBJ_i18n.Reset)].disabled = false;
-				this.options[this.getIndexByLabel(OBJ_i18n.Generate)].disabled = false;
+				this.options[this.getIndexByLabel(OBJI18n.Reset)].disabled = false;
+				this.options[this.getIndexByLabel(OBJI18n.Generate)].disabled = false;
 			}
 			else
 			{
-				this.options[this.getIndexByLabel(OBJ_i18n.Reset)].disabled = true;
-				this.options[this.getIndexByLabel(OBJ_i18n.Generate)].disabled = true;
+				this.options[this.getIndexByLabel(OBJI18n.Reset)].disabled = true;
+				this.options[this.getIndexByLabel(OBJI18n.Generate)].disabled = true;
 			}
 			if (flag3)
 			{
-				this.options[this.getIndexByLabel(OBJ_i18n.Clear)].disabled = false;
+				this.options[this.getIndexByLabel(OBJI18n.Clear)].disabled = false;
 				return;
 			}
-			this.options[this.getIndexByLabel(OBJ_i18n.Clear)].disabled = true;
+			this.options[this.getIndexByLabel(OBJI18n.Clear)].disabled = true;
 		}
 
 		// Token: 0x06000026 RID: 38 RVA: 0x000049A8 File Offset: 0x00002BA8

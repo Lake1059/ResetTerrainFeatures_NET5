@@ -1967,11 +1967,11 @@
   "project": {
     "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "C:\\CSharp\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5.csproj",
+      "projectUniqueName": "C:\\Git\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5.csproj",
       "projectName": "ResetTerrainFeatures_NET5",
-      "projectPath": "C:\\CSharp\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5.csproj",
+      "projectPath": "C:\\Git\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5.csproj",
       "packagesPath": "C:\\Users\\1059\\.nuget\\packages\\",
-      "outputPath": "C:\\CSharp\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5\\obj\\",
+      "outputPath": "C:\\Git\\ResetTerrainFeatures_NET5\\ResetTerrainFeatures_NET5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\1059\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2020,7 +2020,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
